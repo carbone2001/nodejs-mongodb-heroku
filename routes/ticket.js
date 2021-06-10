@@ -2,12 +2,12 @@ const express = require('express')
 const router = express.Router()
 const Controller = require('../controllers/ticket.controller');
 
-router.get('/', Controller.findAll);
+router.post('/', Controller.findAll);
 
-router.get('/desperfectosPorLocalidades', Controller.findDesperfectosPorLocalidades)
+//desperfectos
+router.post('/desperfectosPorLocalidades', Controller.findDesperfectosPorLocalidades);//CORRECTO!
 
-router.post('/addTicket', Controller.create)
-
-
+//atencion
+router.post('/clientesQueSonEmpleadosConTickets', Controller.clientesQueSonEmpleadosConTickets);//CORRECTO!
 
 module.exports = router
